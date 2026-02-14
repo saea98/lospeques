@@ -1,0 +1,417 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.fondos-corazones {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  font-size: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  animation: float 15s ease-in-out infinite;
+}
+
+.fondos-corazones span {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fondos-corazones span:nth-child(odd) { animation-delay: 0.5s; }
+.fondos-corazones span:nth-child(3n) { animation-delay: 1s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+.contenedor-formulario {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(200, 80, 120, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.contenedor-formulario h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #c73e6b;
+  text-align: center;
+}
+
+.subtitulo {
+  color: #888;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+form label span {
+  display: block;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #f0c8d4;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+form select {
+  cursor: pointer;
+  background: white;
+  appearance: auto;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #e91e63;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.btn-primario {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e91e63, #c2185b);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 0.5rem;
+}
+
+.btn-primario:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+.enlace-caja {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0c8d4;
+}
+
+.enlace-caja p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.75rem;
+}
+
+.enlace-input-wrap {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.enlace-input-wrap input {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.85rem;
+  border: 2px solid #f0c8d4;
+  border-radius: 0.5rem;
+  background: #fdf6f8;
+}
+
+.btn-copiar {
+  padding: 0.6rem 1rem;
+  background: #c73e6b;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-copiar:hover {
+  background: #a82d55;
+}
+
+.preview-mini {
+  margin-top: 2rem;
+}
+
+.preview-mini > p {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+}
+
+.preview-mini .tarjeta {
+  transform: scale(0.85);
+  transform-origin: top center;
+}
+
+/* Tarjeta romántica */
+.tarjeta {
+  background: linear-gradient(145deg, #fff5f8 0%, #ffe8f0 100%);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  max-width: 400px;
+  box-shadow: 0 15px 45px rgba(200, 80, 120, 0.25);
+  border: 2px solid rgba(233, 30, 99, 0.15);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.tarjeta-corazon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.tarjeta-titulo {
+  font-size: 1.75rem;
+  color: #c73e6b;
+  margin: 0 0 1rem;
+}
+
+.tarjeta-mensaje {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  position: relative;
+}
+
+/* Figuras del mensaje */
+.mensaje-figura-ninguna {
+  /* sin cambios extra */
+}
+
+.mensaje-figura-corazones {
+  border: 2px solid #e91e63;
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, #fff0f5 0%, #ffe4ec 100%);
+  box-shadow: inset 0 0 0 1px rgba(233, 30, 99, 0.2);
+}
+
+.mensaje-figura-corazones::before,
+.mensaje-figura-corazones::after {
+  content: '♥';
+  position: absolute;
+  font-size: 0.9rem;
+  color: rgba(233, 30, 99, 0.4);
+  top: 0.4rem;
+}
+
+.mensaje-figura-corazones::before {
+  left: 0.75rem;
+}
+
+.mensaje-figura-corazones::after {
+  right: 0.75rem;
+}
+
+.mensaje-figura-burbuja {
+  border-radius: 1.25rem 1.25rem 1.25rem 0.25rem;
+  background: linear-gradient(180deg, #fff8fa 0%, #ffecf2 100%);
+  border: 2px solid #f8b4c8;
+  box-shadow: 0 4px 15px rgba(200, 80, 120, 0.15);
+}
+
+.mensaje-figura-burbuja::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 1.5rem;
+  border: 10px solid transparent;
+  border-top-color: #ffecf2;
+  border-left-width: 0;
+  filter: drop-shadow(0 2px 2px rgba(200, 80, 120, 0.1));
+}
+
+.mensaje-figura-cinta {
+  border: none;
+  background: linear-gradient(165deg, #ffe8f0 0%, #ffd6e3 50%, #ffe8f0 100%);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 0 rgba(199, 62, 107, 0.2), inset 0 1px 0 rgba(255,255,255,0.6);
+  border-left: 4px solid #c73e6b;
+  border-right: 4px solid #c73e6b;
+}
+
+.mensaje-figura-estrellas {
+  border: 2px dashed #e91e63;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #fffafc 0%, #fff0f5 100%);
+}
+
+.mensaje-figura-estrellas::before,
+.mensaje-figura-estrellas::after {
+  content: '★';
+  position: absolute;
+  font-size: 0.85rem;
+  color: #e91e63;
+  opacity: 0.6;
+  top: 0.35rem;
+}
+
+.mensaje-figura-estrellas::before {
+  left: 0.6rem;
+}
+
+.mensaje-figura-estrellas::after {
+  right: 0.6rem;
+}
+
+.mensaje-figura-marco {
+  border: 3px double #c73e6b;
+  border-radius: 0.25rem;
+  background: #fffbfc;
+  padding: 1.25rem 1.5rem;
+  box-shadow: inset 0 0 0 1px rgba(199, 62, 107, 0.15);
+}
+
+.tarjeta-firma {
+  font-style: italic;
+  color: #c73e6b;
+  font-weight: 600;
+}
+
+/* Animaciones de tarjeta */
+.tarjeta-anim-entrada {
+  animation: entradaSuave 1s ease-out both;
+}
+
+.tarjeta-anim-rebote {
+  animation: rebote 1.2s ease-out both;
+}
+
+.tarjeta-anim-brillo {
+  animation: brillo 2.5s ease-in-out infinite;
+}
+
+.tarjeta-anim-balanceo {
+  animation: balanceo 3s ease-in-out infinite;
+}
+
+.tarjeta-anim-flotar {
+  animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes entradaSuave {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rebote {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes brillo {
+  0%, 100% { box-shadow: 0 15px 45px rgba(200, 80, 120, 0.25); }
+  50% { box-shadow: 0 15px 55px rgba(233, 30, 99, 0.45), 0 0 30px rgba(233, 30, 99, 0.15); }
+}
+
+@keyframes balanceo {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Animaciones del mensaje (texto) */
+.mensaje-anim-entrada {
+  animation: mensajeEntrada 1.2s ease-out 0.3s both;
+}
+
+.mensaje-anim-rebote {
+  animation: mensajeRebote 1s ease-out 0.4s both;
+}
+
+.mensaje-anim-brillo {
+  animation: mensajeBrillo 2.5s ease-in-out 0.5s infinite;
+}
+
+.mensaje-anim-balanceo {
+  animation: mensajeBalanceo 2.5s ease-in-out 0.5s infinite;
+}
+
+.mensaje-anim-flotar {
+  animation: mensajeFlotar 2.5s ease-in-out 0.5s infinite;
+}
+
+@keyframes mensajeEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mensajeRebote {
+  0% { opacity: 0; transform: scale(0.9); }
+  60% { transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes mensajeBrillo {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+@keyframes mensajeBalanceo {
+  0%, 100% { transform: rotate(-1deg); }
+  50% { transform: rotate(1deg); }
+}
+
+@keyframes mensajeFlotar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}

@@ -195,9 +195,10 @@ form textarea {
   z-index: 1;
 }
 
-.tarjeta-corazon {
-  font-size: 3rem;
+.tarjeta-icono {
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .tarjeta-titulo {
